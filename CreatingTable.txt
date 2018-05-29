@@ -1,0 +1,14 @@
+
+
+create database plants;
+connect plants;
+
+
+create table garden
+	(id bigint not null auto_increment,
+	plant varchar (255),
+	date DATE,
+	sun tinyint (1),
+	WaterTimes int (255),
+	WaterUnity varchar (255), 
+	primary key (id));
