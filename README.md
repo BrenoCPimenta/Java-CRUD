@@ -44,7 +44,7 @@ We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDB
 
 
 
-			## Now we have a Create, Read, Update and Delete aplicantio in Java!
+## Now we have a Create, Read, Update and Delete aplicantio in Java!
  
 
 
