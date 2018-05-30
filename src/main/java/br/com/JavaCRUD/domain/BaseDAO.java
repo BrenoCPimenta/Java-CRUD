@@ -21,7 +21,7 @@ public class BaseDAO {
 		//The protocol to our IP and our DataBase
 		String url = "jdbc:mysql://localhost/plants";
 		//Connects using our url, user and password
-		Connection conn = DriverManager.getConnection(url, "user", "password");
+		Connection conn = DriverManager.getConnection(url, "root", "maria");
 		return conn;			
 	}
 

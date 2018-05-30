@@ -1,7 +1,6 @@
 package br.com.JavaCRUD.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 
 /*The data you are going to set or get using getter or setter method some times 

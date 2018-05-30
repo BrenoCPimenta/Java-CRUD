@@ -27,6 +27,18 @@ We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDB
 			>A Method 'getGeneratedId' to see the ID of the recent added plant
 			>A Method 'savePlant' to add or update
 			>A Method 'deletePlant'
-			
-	>Our last class will be GardenService, since its not a good practice access directily the DAO layer, we will use this class.  
 
+	>Our last class will be GardenService, since its not a good practice access directily the DAO layer, we will use this class.  
+	>Now we will start the tests, first creating a new Source Folder called src-test, and inside it a JUnit Test Case Class.
+	>Our first method of test will be testPlantList. We need to add a new plant called "Plant 1" in the table so we can find it by name, using the method. You can use the next query: INSERT INTO garden (plant) VALUES ("Plant1");
+
+	>We can see if it works, if everything is right, we can now move on to our final and complet method.
+
+	>Final method: testSaveDeletePlant. We will create a plant object; save in
+	the table (DataBase); search for it on the DataBase, to see if it worked;
+	verify the AutoIncremented id; then update this plant we added with
+	another name and cornfirm; for last, we will delete the plant, and verify if it worked again;
+ 
+
+
+	
