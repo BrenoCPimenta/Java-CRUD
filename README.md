@@ -34,10 +34,17 @@ We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDB
 
 	>We can see if it works, if everything is right, we can now move on to our final and complet method.
 
-	>Final method: testSaveDeletePlant. We will create a plant object; save in
-	the table (DataBase); search for it on the DataBase, to see if it worked;
-	verify the AutoIncremented id; then update this plant we added with
-	another name and cornfirm; for last, we will delete the plant, and verify if it worked again;
+	>Final method: testSaveDeletePlant 
+			>We will create a plant object;
+			>Save it in the table (DataBase);
+			>Search for it on the DataBase, to see if it worked;
+			>Verify the AutoIncremented id;
+			>Then update this plant we added withanother name and verify;
+			>For last, we will delete the plant, and verify if it worked again;
+
+
+
+			## Now we have a Create, Read, Update and Delete aplicantio in Java!
  
 
 
