@@ -5,7 +5,7 @@ We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDB
 
 #### What you need:
 	> MariaDB installed and configured. If you want, you can use MySQL, makes no 
-	diference,I will let a MySQL.txt file that explains the basics on linux.
+	diference.
 
 	> Java up and running. I will use maven, just to keep with the best practicies,
 	but isn't necessary.
