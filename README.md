@@ -68,6 +68,6 @@ We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDB
 
 ### Now we have a Create, Read, Update and Delete applicantion in Java!
  
-
+I have used the book: "WEB SERVICES RESTFUL" from "Ricardo R. Lecheta" as a base to this small project
 
 	
