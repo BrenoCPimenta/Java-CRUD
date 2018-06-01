@@ -16,7 +16,7 @@ public class PlantDAO extends BaseDAO{
 		Plant p = new  Plant();
 		p.setId(rs.getLong("id"));
 		p.setPlants(rs.getString("plant"));
-		p.setDate(rs.getString("date"));
+		p.setDate(rs.getDate("date"));
 		p.setSun(rs.getByte("sun"));
 		p.setWaterTimes(rs.getInt("WaterTimes"));
 		p.setWaterUnity(rs.getString("WaterUnity"));
@@ -145,7 +145,7 @@ public class PlantDAO extends BaseDAO{
 				stmt = conn.prepareStatement("UPDATE garden SET plant=?, date=?, sun=?, WaterTimes=?, WaterUnity=? WHERE id=?");
 			}
 			stmt.setString(1, p.getPlants());
-			stmt.setString(2, p.getDate());
+			stmt.setDate(2, p.getDate());
 			stmt.setByte(3, p.getSun());
 			stmt.setInt(4, p.getWaterTimes());
 			stmt.setString(5, p.getWaterUnity());

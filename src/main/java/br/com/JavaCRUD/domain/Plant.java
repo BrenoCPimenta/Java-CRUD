@@ -1,6 +1,7 @@
 package br.com.JavaCRUD.domain;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 
 /*The data you are going to set or get using getter or setter method some times 
@@ -16,7 +17,7 @@ public class Plant implements Serializable {
 	//Now we declare our variables, as in the database, all of then as field variable:
 	private long id;
 	private String plants;
-	private String date;
+	private Date date;
 	private byte sun; //The tinyint reference in java is byte
 	private int WaterTimes;
 	private String WaterUnity;
@@ -35,11 +36,11 @@ public class Plant implements Serializable {
 	public void setPlants(String plants) {
 		this.plants = plants;
 	}
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date2) {
-		this.date = date2;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	public byte getSun() {
 		return sun;
@@ -63,7 +64,7 @@ public class Plant implements Serializable {
 	//Than a method to return us all the information
 	@Override 
 	public String toString() {
-		return "Garden [id="+id+", plant="+plants+", date="+date+", sun="+sun+", WaterTimes="+ WaterTimes+", WaterUnity="+WaterUnity+"]";
+		return "Plant [id="+id+", plant="+plants+", date="+date+", sun="+sun+", WaterTimes="+ WaterTimes+", WaterUnity="+WaterUnity+"]";
 	}
 	
 	

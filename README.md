@@ -1,11 +1,12 @@
 # Java-CRUD
 A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
-We will use Java; Eclipse IDE; Maven to manage our dependencies; MariaDB and JDBC for DataBase; JUnit for the tests.
+We will use Java; Maven to manage our dependencies; MySQL and JDBC for DataBase; JUnit for the tests.
 
 #### What you need:
-	> MariaDB installed and configured. If you want, you can use MySQL, makes no 
-	diference,I will let a MySQL.txt file that explains the basics on linux.
+	> MySQL installed and configured.
+
+	>It will be used Eclipse, it is optional, but the tips on the steps will be directed to it.
 
 	> Java up and running. I will use maven, just to keep with the best practicies,
 	but isn't necessary.

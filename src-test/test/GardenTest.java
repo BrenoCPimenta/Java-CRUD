@@ -1,5 +1,6 @@
 package test;
 
+import java.sql.Date;
 import java.util.List;
 
 import br.com.JavaCRUD.domain.*;
@@ -26,7 +27,9 @@ public class GardenTest extends TestCase {
 		//Creating a test plant
 		Plant p = new Plant();
 		p.setPlants("TestPlant");
-		p.setDate("30/05/2018");
+		@SuppressWarnings("deprecation")
+		Date date = new Date(1986,31,5);
+		p.setDate(date);
 		byte sun = 0b0;
 		p.setSun(sun);
 		p.setWaterTimes(3);
