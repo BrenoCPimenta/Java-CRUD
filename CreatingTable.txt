@@ -7,7 +7,7 @@ connect plants;
 create table garden
 	(id bigint not null auto_increment,
 	plant varchar (255),
-	date DATE,
+	date  varchar (255),
 	sun tinyint (1),
 	WaterTimes int (255),
 	WaterUnity varchar (255), 
