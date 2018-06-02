@@ -1,10 +1,11 @@
 # Java-CRUD
 A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
-We will use Java; Maven to manage our dependencies; MySQL and JDBC for DataBase; JUnit for the tests.
+We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as an interface to connect to this DataBase; JUnit for the tests.
 
 #### What you need:
-	> MySQL installed and configured.
+	> MySQL/MariaDB installed and configured. If you want to use MySQL from Oracle,
+	 there's no problem, I will let comments on the code and here, saying where you need to change.
 
 	>It will be used Eclipse, it is optional, but the tips on the steps will be directed to it.
 
@@ -17,13 +18,27 @@ We will use Java; Maven to manage our dependencies; MySQL and JDBC for DataBase;
 
 	> Create a Maven Project on Eclipse.
 
-	> Now go into maven repository site and search for the JDBC of MariaDB 
-	and add the dependency to the pom file.
+	> Now go into maven repository site and search for MariaDB, it will be the
+	"MariaDB java client" and add the dependency to the pom file.
+		HERE if you are using MySQL you must search for "MySQL Connector/J"
+
+	> Following the TDD (Test Driven Development) good practicies, first thing we 
+	going to add in our package will be a JUnit Test Case, I will call it "_StepByStep". 
+	Why:
+			>So we can make methods and test ou code as we create it, preventing a lot
+			of Debugging later.
+			>Will be in the same package as our main code, because of the protected 
+			getConnection method.
+			>It has a underscore in the name, so it gets above our other classes in 
+			our source package, a tip from James Shore.
 
 	> Now lets create our first class BaseDAO, that will be responsible to 
 	 connect to our DataBase using the JDBC.
 			>It consists on a Builder that activates the drivers and a method that 
 			uses the URL to the DataBase, the User and the password, to create a connection.
+
+			- [x] In "_StepByStep" we will add our first method "testConnection" 
+					so we can test our connection first everytime we rum the tests.
 
 	>Our second class will be Plant, that will be responsible for the Getters and Setters
 			>Will be Serializable.
@@ -31,6 +46,10 @@ We will use Java; Maven to manage our dependencies; MySQL and JDBC for DataBase;
 			created in the DataBase.
 			>We will finish overriding the method toString, so that it returns 
 			all of our information in a string that we formated.
+
+			-[x] Add a Private Plant object in the "_StepByStep"
+			-[x] Than a method called "testPlantObject"
+
 
 	>Our third class will be PlantDAO, that will inherit our method get connection, 
 	so we can create new methods that open connections and manipulate our data.
@@ -43,6 +62,13 @@ We will use Java; Maven to manage our dependencies; MySQL and JDBC for DataBase;
 			>A Method 'getGeneratedId' to see the ID of the recent added plant.
 			>A Method 'savePlant' to add or update.
 			>A Method 'deletePlant'.
+
+			- [x] We will add a Plant to our DataBase manually with a id = 1L
+					First connect to the database, then use the query i will let in 
+					the createTable file. 
+			- [x] In "_StepByStep" we will add a method called "testDataBase" 
+					and will verify if it returns the name of the first plant
+					so we verify its connecting to the right table.
 
 	>Our last class will be GardenService, since its not a good practice 
 	access directily the DAO layer,	we will use this class.  
