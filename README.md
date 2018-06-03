@@ -1,4 +1,4 @@
-# Java-CRUD                                ![alt text](https://sentry.io/_assets/logos/java-e977f080752e0eeda8c52f34f7100d8814964b4134a8de42caa18b8805d8bba1.svg)
+# Java-CRUD                               
 A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
 We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as an interface to connect to this DataBase; JUnit for the tests.
@@ -25,7 +25,7 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
   "MariaDB java client" and add the dependency to the pom file.
   HERE if you are using MySQL you must search for "MySQL Connector/J"
 
-  * Following the TDD (Test Driven Development) good practicies, first thing we going to add in our package will be a JUnit Test Case, I will call it *StepByStep* 
+  * Following the TDD (Test Driven Development) good practicies, first thing we going to add in our package will be a JUnit Test Case, I will call it *_StepByStep* 
    Why:
     - So we can make methods and test ou code as we create it, preventing a lot of Debugging later.
     - Will be in the same package as our main code, because of the protected  getConnection method.
@@ -69,7 +69,9 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
 > Now we will start the tests, first creating a new Source Folder called src-test, and inside it a JUnit Test Case Class.
 
 > Our first method of test will be testPlantList. We need to add a new plant called "Plant 1" in the table so we can find	it by name, using the method. 
-  You can use the next query: '''INSERT INTO garden (plant) VALUES ("Plant1");'''
+  You can use the next query: '''SQL
+  INSERT INTO garden (plant) VALUES ("Plant1");
+  '''
 
 > We can see if it works, if everything is right, we can now move on to our final and complet method.
 
