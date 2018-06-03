@@ -47,17 +47,17 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
 			>We will finish overriding the method toString, so that it returns 
 			all of our information in a string that we formated.
 
-			-[x] Add a Private Plant object in the "_StepByStep"
-			-[x] Than a method called "testPlantObject"
+  			-[x] Add a Private Plant object in the "_StepByStep"
+  			-[x] Than a method called "testPlantObject"
 
 
-	>Our third class will be PlantDAO, that will inherit our method get connection, 
-	so we can create new methods that open connections and manipulate our data.
-			>A Method 'createPlant' that gets a result of a executed query on the 
+   - Our third class will be PlantDAO, that will inherit our method get connection, 
+	 so we can create new methods that open connections and manipulate our data.
+	 		> A Method 'createPlant' that gets a result of a executed query on the 
 			database and transforms into a object.
 
 			>A Method 'getPlantById'
-			>A Method 'findByName'
+ 			>A Method 'findByName'
 			>A Method 'getPlnts'
 			>A Method 'getGeneratedId' to see the ID of the recent added plant.
 			>A Method 'savePlant' to add or update.

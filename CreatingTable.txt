@@ -12,3 +12,7 @@ create table garden
 	WaterTimes int (255),
 	WaterUnity varchar (255), 
 	primary key (id));
+
+
+INSERT INTO garden (plant, date, sun, WaterTimes, WaterUnity) VALUES ('flower', '1998-05-06', 1, 1, 'a day');
+
