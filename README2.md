@@ -3,37 +3,35 @@ A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
 We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as an interface to connect to this DataBase; JUnit for the tests.
 
-
----------------------------------------
-
-## What you need:
+#### What you need:
 	
-  * MySQL/MariaDB installed and configured. If you want to use MySQL from Oracle,
+> MySQL/MariaDB installed and configured. If you want to use MySQL from Oracle,
   there's no problem, I will let comments on the code and here, saying where you need to change.
 
-  *It will be used Eclipse, it is optional, but the tips on the steps will be directed to it.
+>It will be used Eclipse, it is optional, but the tips on the steps will be directed to it.
 
-  * Java up and running. I will use maven, just to keep with the best practicies, but isn't necessary.
-
----------------------------------------
+> Java up and running. I will use maven, just to keep with the best practicies,
+  but isn't necessary.
  
-## Step by Step:
-  * Create a table called garden in a database called plants. I will let a CreatingTable.txt file with the comands.
+#### Step by Step:
+> Create a table called garden in a database called plants.
+  I will let a CreatingTable.txt file with the comands.
 
-  * Create a Maven Project on Eclipse.
+> Create a Maven Project on Eclipse.
 
-  * Now go into maven repository site and search for MariaDB, it will be the
+> Now go into maven repository site and search for MariaDB, it will be the
   "MariaDB java client" and add the dependency to the pom file.
   HERE if you are using MySQL you must search for "MySQL Connector/J"
 
-  * Following the TDD (Test Driven Development) good practicies, first thing we going to add in our package will be a JUnit Test Case, I will call it "_StepByStep". 
+> Following the TDD (Test Driven Development) good practicies, first thing we 
+  going to add in our package will be a JUnit Test Case, I will call it "_StepByStep". 
   Why:
-    - So we can make methods and test ou code as we create it, preventing a lot of Debugging later.
-    - Will be in the same package as our main code, because of the protected  getConnection method.
-    - It has a underscore in the name, so it gets above our other classes in our source package, a tip from James Shore.
-    
-  * Now lets create our first class BaseDAO, that will be responsible to connect to our DataBase using the JDBC.
-    - It consists on a Builder that activates the drivers and a method that uses the URL to the DataBase, the User and the password, to create a connection.
+  - So we can make methods and test ou code as we create it, preventing a lot of Debugging later.
+  - Will be in the same package as our main code, because of the protected  getConnection method.
+  - It has a underscore in the name, so it gets above our other classes in our source package, a tip from James Shore.
+
+> Now lets create our first class BaseDAO, that will be responsible to connect to our DataBase using the JDBC.
+  - It consists on a Builder that activates the drivers and a method that uses the URL to the DataBase, the User and the password, to create a connection.
 
 - [x] In "_StepByStep" we will add our first method "testConnection" so we can test our connection first everytime we run the tests.
 
@@ -83,8 +81,8 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
   - For last, we will delete the plant, and verify if it worked again;
 
 
----------------------------------------
-### Now we have a 'Create, Read, Update and Delete' applicantion in Java!
+
+### Now we have a Create, Read, Update and Delete applicantion in Java!
  
 
 
