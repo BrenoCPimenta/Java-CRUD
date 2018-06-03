@@ -1,12 +1,16 @@
 # Java-CRUD                               
 A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
-##We will use 
+###We will use 
 
    **Java**;
+
    **Maven** to manage our dependencies;
+
    **MariaDB** as DataBase;
+
    **JDBC** as interface to connect to the DataBase;
+   
    **JUnit** for the tests.
 
 
