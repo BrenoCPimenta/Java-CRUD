@@ -1,7 +1,12 @@
 # Java-CRUD                               
 A simple tutorial to a simple Java CRUD (Create, Read, Update and Delete)
 
-We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as an interface to connect to this DataBase; JUnit for the tests.
+###We will use 
+                          * **Java**;
+                          * **Maven** to manage our dependencies;
+                          * **MariaDB** as DataBase;
+                          * **JDBC** as interface to connect to the DataBase;
+                          * **JUnit** for the tests.
 
 
 
@@ -63,7 +68,7 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
   * Our last class will be GardenService, since its not a good practice to access directily the DAO layer, we will use this class.  
 
 
-  * Now we will **TESTE** a Final method on _StepByStep_: testSaveDeletePlant 
+  * Now we will **TEST** a Final method on _StepByStep_: testSaveDeletePlant 
     - We will create a plant object;
     - Save it in the table (DataBase);
     - Search for it on the DataBase, to see if it worked;
@@ -74,6 +79,7 @@ We will use Java; Maven to manage our dependencies; MariaDB as DataBase; JDBC as
 
 ------
 ### Now we have a 'Create, Read, Update and Delete' applicantion in Java!
+I used 
  
 
 
