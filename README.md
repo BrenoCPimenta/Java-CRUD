@@ -57,16 +57,16 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
         - Now we verify with a connection if it returns correctly to what we ask.
         - I let 2 options on the code, so you can decide what type of query you want to use.
 
-  * Our third class will be **PlantDAO**, that will inherit our method '''java getConnection() ''', so we can create new methods that open connections and manipulate our data.
+  * Our third class will be **PlantDAO**, that will inherit our method getConnection(), so we can create new methods that open connections and manipulate our data.
     - A Method 'createPlant' that gets a result of a executed query on the database and transforms into a object.
     - A Method 'getPlantById'
     - A Method 'findByName'
-    - A Method 'getPlnts'
+    - A Method 'getPlants'
     - A Method 'getGeneratedId' to see the ID of the recent added plant.
     - A Method 'savePlant' to add or update.
     - A Method 'deletePlant'.
 
-  * Our last class will be GardenService, since its not a good practice to access directily the DAO layer, we will use this class.  
+  * Our last class will be **GardenService**, since its not a good practice to access directily the DAO layer, we will use this class.  
 
 
   * Now we will **TEST** a Final method on _StepByStep_: testSaveDeletePlant 
@@ -79,8 +79,7 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
 
 
 ------
-### Now we have a 'Create, Read, Update and Delete' applicantion in Java!
-I used 
+### Now we have a _Create, Read, Update and Delete_ applicantion in Java!
  
 
 
