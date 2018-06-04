@@ -9,7 +9,9 @@ public class BaseDAO {
 	//Activating the drivers
 	public BaseDAO() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			//IF YOU USE MYSQL NEED TO CHANGE HERE
+			//Change org.mariadb for com.mysql
+			Class.forName("org.mariadb.jdbc.Driver");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();			
 		}
@@ -18,8 +20,10 @@ public class BaseDAO {
 	//Creating a method that connects to our database
 	protected Connection getConnection() throws SQLException {
 		
-		//The protocol to our IP and our DataBase
-		String url = "jdbc:mysql://localhost/plants";
+		//The protocol to our IP and our DataBase. 
+		//IF YOU USE MYSQL NEED TO CHANGE HERE
+		//Change mariadb for mysql
+		String url = "jdbc:mariadb://localhost/plants";
 		//Connects using our url, user and password
 		Connection conn = DriverManager.getConnection(url, "root", "maria");
 		return conn;			

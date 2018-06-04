@@ -39,6 +39,11 @@ public class Plant implements Serializable {
 	public Date getDate() {
 		return date;
 	}
+	public void setDate(int year, int month, int day) {
+		SimpleDate simpleDate = new SimpleDate(1998, 5, 6);
+		Date date = simpleDate.getDate();
+		this.date = date;
+	}
 	public void setDate(Date date) {
 		this.date = date;
 	}

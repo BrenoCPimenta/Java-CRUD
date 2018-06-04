@@ -41,10 +41,12 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
 
   * **TEST** In _StepByStep_ we will add our first method "testConnection" so we can test our connection first everytime we run the tests.
 
+  * We will add a extra Class called _SimpleDate_, it will be responsile to get our date in Int and transform it into java.sql.Date, because the constructor with int numbers is Deprecated.
 
   * Our second class will be **Plant**, that will be responsible for the Getters and Setters
     - Will be Serializable.
     - Our variables and their types, must be coherent with the ones we created in the DataBase.
+    - Notice in set date we will use the method from _SimpleDate_ Class.
     - We will finish overriding the method toString, so that it returns all of our information in a string that we formated.
 
 
@@ -65,6 +67,16 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
     - A Method 'getGeneratedId' to see the ID of the recent added plant.
     - A Method 'savePlant' to add or update.
     - A Method 'deletePlant'.
+
+
+  * Now will be the greater **TEST**, new method on _StepByStep_ called: testCreateUpdateDeletePlantDAO() 
+    - We will create a plant object;
+    - Save it in the table (DataBase);
+    - Search for it on the DataBase, to see if it worked;
+    - Verify the AutoIncremented id;
+    - Then update this plant we added with another name and verify;
+    - For last, we will delete the plant, and verify if it worked again;
+
 
   * Our last class will be **GardenService**, since its not a good practice to access directily the DAO layer, we will use this class.  
 

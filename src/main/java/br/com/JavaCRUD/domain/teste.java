@@ -20,9 +20,15 @@ public class teste {
 		//saving the test plant
 		plantService.save(p);
 		
-		System.out.println(p.toString()); 
 		
-		//System.out.println(plantService.getPlant(1L).toString());	
-	}
+		
+		//System.out.println(p.toString()); 
+		
+		System.out.println(plantService.getPlant(1L).toString());	
+
+		}
+		
+		
+	
 
 }

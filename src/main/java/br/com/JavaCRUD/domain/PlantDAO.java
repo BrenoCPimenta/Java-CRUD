@@ -151,9 +151,11 @@ public class PlantDAO extends BaseDAO{
 			stmt.setString(5, p.getWaterUnity());
 			
 			//If it is a update we need to add the already existent id
-			if(p.getId()!=null) stmt.setLong(6, p.getId());
+			if(p.getId()!=null) {
+				stmt.setLong(6, p.getId());
+			}
 			//Lets check if the update was successful 
-			int count = stmt.executeUpdate(); //if it returns nothong, count will be equals 0
+			int count = stmt.executeUpdate(); //if it returns nothing, count will be equals 0
 			if(count==0) throw new SQLException("Error in inserting the plant");
 			
 			//if the insertion was fine, we can read the autoIncremented Id
@@ -183,7 +185,7 @@ public class PlantDAO extends BaseDAO{
 		
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement("DELETE * FROM garden WHERE id = ?");
+			stmt = conn.prepareStatement("DELETE FROM garden WHERE id = ?");
 			stmt.setLong(1, id);
 			//lets execute the query and analyze its return
 			int count = stmt.executeUpdate();
