@@ -53,10 +53,10 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
   * **TEST** Lets add 2 tests on _StepByStep_, one for the Object and one for the DataBase.
       - Test our object Plant.
         - Add a Private Plant object in the _StepByStep_.
-        - Than a method called "testPlantObject" to test getter and setters.
+        - Than a method called "testPlantObject()" to test getter and setters.
       - Test if we are connecting to the right table.
         - Insert a Plant to our DataBase manually (Query in the createTable file).
-        - Now we verify with a connection if it returns correctly to what we ask.
+        - Now we verify with a connection if it returns correctly to what we ask by the "testDataBase()" method.
         - I let 2 options on the code, so you can decide what type of query you want to use.
 
   * Our third class will be **PlantDAO**, that will inherit our method getConnection(), so we can create new methods that open connections and manipulate our data.

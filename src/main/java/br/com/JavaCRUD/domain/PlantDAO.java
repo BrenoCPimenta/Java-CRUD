@@ -137,9 +137,8 @@ public class PlantDAO extends BaseDAO{
 			conn = getConnection();
 			
 			//If the id from our plant is null, we will add as the next on our table
-			if(p.getId()==null){
-				stmt=conn.prepareStatement("INSERTO INTO garden (plant, date, sun, WaterTimes, WaterUnity)"
-						                 + "VALUES(?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+			if(p.getId() == 0){
+				stmt=conn.prepareStatement("INSERT INTO garden (plant, date, sun, WaterTimes, WaterUnity) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 			}else {
 			//if the id already is in use
 				stmt = conn.prepareStatement("UPDATE garden SET plant=?, date=?, sun=?, WaterTimes=?, WaterUnity=? WHERE id=?");
@@ -151,10 +150,11 @@ public class PlantDAO extends BaseDAO{
 			stmt.setString(5, p.getWaterUnity());
 			
 			//If it is a update we need to add the already existent id
-			if(p.getId()!=null) {
+			if(p.getId()!=0) {
 				stmt.setLong(6, p.getId());
 			}
 			//Lets check if the update was successful 
+			//stmt.executeUpdate(); 
 			int count = stmt.executeUpdate(); //if it returns nothing, count will be equals 0
 			if(count==0) throw new SQLException("Error in inserting the plant");
 			

@@ -109,9 +109,19 @@ public class _StepByStep extends TestCase {
 		//4 Create a Plant with ID
 		Plant pTestCreateID = new Plant();
 		long idTest = 2l;
-		pTestCreateID.setPlants("TestID");
 		pTestCreateID.setId(idTest);
+		pTestCreateID.setPlants("TestID");
 		
+		SimpleDate simDate = new SimpleDate(2012, 01, 26);
+		Date testDate = simDate.getDate();
+		pTestCreateID.setDate(testDate);
+		
+		byte sunTest = 0;
+		pTestCreateID.setSun(sunTest);
+		
+		pTestCreateID.setWaterTimes(9);
+		pTestCreateID.setWaterUnity("a week");
+			
 		pDAO.savePlant(pTestCreateID);
 		p = pDAO.getPlantById(idTest);
 		String nameReceived = p.getPlants();
@@ -122,7 +132,7 @@ public class _StepByStep extends TestCase {
 		pTestNoID.setPlants("TestNoId");
 		
 		pDAO.savePlant(pTestNoID);
-		idTest = 3l; //The next
+		idTest = 4l;
 		p = pDAO.getPlantById(idTest);
 		nameReceived = p.getPlants();
 		assertEquals("TestNoID", nameReceived);

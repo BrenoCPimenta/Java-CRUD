@@ -1,0 +1,11 @@
+Esta dando erro no 4º teste na hora de salvar
+
+TETATIVAS
+	-o query INSERT to esta funcionando bem
+	-Parece que o erro esta noo formato date
+	ERRO ESTAVA NA SINTAXE DO SQL
+	
+	
+MUDAR comentario sobre metodo em PlantDAO o getGeneratedId(Statement stmt)
+
+Criar um metodo para buscar o ultimo id incrementado para usar no assertEquals do test 4 no _StepByStep
