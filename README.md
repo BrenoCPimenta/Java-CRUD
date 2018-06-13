@@ -1,7 +1,7 @@
 # Java-CRUD                               
 A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
 
-## We will use 
+## We will use:
 
    * **Java**;
    * **Maven** to manage our dependencies;
@@ -39,7 +39,7 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
   * Now lets create our first class **BaseDAO**, that will be responsible to connect to our DataBase using JDBC.
     - It consists on a Builder that activates the drivers and a method that uses the URL, the User and the password, to create a connection.
 
-  * **TEST** In _StepByStep_ we will add our first method "testConnection" so we can test our connection first everytime we run the tests.
+  * **TEST** In _StepByStep_ we will add our first method "testConnection" so we can test our connection first, everytime we run the tests.
 
   * We will add a extra Class called _SimpleDate_, it will be responsile to get our date in Int and transform it into java.sql.Date, because the constructor with int numbers is Deprecated.
 
@@ -64,9 +64,10 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
     - A Method 'getPlantById'
     - A Method 'findByName'
     - A Method 'getPlants'
-    - A Method 'getGeneratedId' to see the ID of the recent added plant.
+    - A Method 'getGeneratedId' that returns the ID of the recent added plant.
     - A Method 'savePlant' to add or update.
     - A Method 'deletePlant'.
+    - A Method 'getNextID' that returns the next auto incremented value. This will be very useful in our tests. 
 
 
   * Now will be the greater **TEST**, new method on _StepByStep_ called: testCreateUpdateDeletePlantDAO() 
@@ -81,13 +82,8 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
   * Our last class will be **GardenService**, since its not a good practice to access directily the DAO layer, we will use this class.  
 
 
-  * Now we will **TEST** a Final method on _StepByStep_: testSaveDeletePlant 
-    - We will create a plant object;
-    - Save it in the table (DataBase);
-    - Search for it on the DataBase, to see if it worked;
-    - Verify the AutoIncremented id;
-    - Then update this plant we added withanother name and verify;
-    - For last, we will delete the plant, and verify if it worked again;
+  * Now we will **TEST** a Final method on _StepByStep_: testSaveDeletePlantService
+    - It will be exactly as the last test method, but now we will be using the methods from the service class.
 
 
 ------
