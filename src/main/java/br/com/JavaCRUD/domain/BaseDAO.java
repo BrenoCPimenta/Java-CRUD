@@ -29,12 +29,4 @@ public class BaseDAO {
 		return conn;			
 	}
 
-	public static void main(String[] args) throws SQLException {
-		BaseDAO db = new BaseDAO();
-		Connection conn = db.getConnection();
-		
-		//Testing our connection:
-		System.out.println(conn);
-		conn.close();
-	}
 }

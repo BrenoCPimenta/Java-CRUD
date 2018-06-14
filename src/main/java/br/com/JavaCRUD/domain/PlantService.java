@@ -48,6 +48,15 @@ public class PlantService {
 		}
 	}
 	
+	//Getting the next Auto Incremented Id
+	public long nextId() {
+		try {
+			return db.getNextID();
+		}catch(SQLException e) {
+			return 0;
+		}
+	}
+	
 	//Deleting
 	public boolean delete(Long id) {
 		try {

@@ -6,7 +6,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import junit.framework.TestCase;
 
 public class _StepByStep extends TestCase {
@@ -20,7 +19,9 @@ public class _StepByStep extends TestCase {
 		BaseDAO db = new BaseDAO();
 		
 		try {
-			conn = db.getConnection();			
+			conn = db.getConnection();	
+		}catch(SQLException e) {
+			System.out.println(e);
 		}finally{
 			if(conn != null) {
 				conn.close();
@@ -94,7 +95,7 @@ public class _StepByStep extends TestCase {
 		PlantDAO pDAO = new PlantDAO();
 		
 		
-		//1 We verify the getPlantById. Remember Id=1
+		//1 We verify the getPlantById. Remember id=1
 		p = pDAO.getPlantById(id);
 		assertEquals("flower", p.getPlants());
 
@@ -106,70 +107,82 @@ public class _StepByStep extends TestCase {
 		List<Plant> pList2 = pDAO.getPlants();
 		assertEquals(pList2.get(0).getPlants(), "flower");
 		
-		//4 Create a Plant without ID
-		long futureId = pDAO.getNextID() - 1;
-		
-		Plant plantTestNoID = new Plant();
-		plantTestNoID.setPlants("TestID");		
+		//4 Create a Plant without ID and save it
+		Plant plantTest = new Plant();
+		plantTest.setPlants("TestID");		
 		SimpleDate simDate = new SimpleDate(2012, 01, 26);
 		Date testDate = simDate.getDate();
-		plantTestNoID.setDate(testDate);
+		plantTest.setDate(testDate);
 		byte sunTest = 0;
-		plantTestNoID.setSun(sunTest);	
-		plantTestNoID.setWaterTimes(9);
-		plantTestNoID.setWaterUnity("a week");		
-		pDAO.savePlant(plantTestNoID);
+		plantTest.setSun(sunTest);	
+		plantTest.setWaterTimes(9);
+		plantTest.setWaterUnity("a week");		
+		pDAO.savePlant(plantTest);
 		
-		p = pDAO.getPlantById(futureId);
-		System.out.println(p.toString());
-		System.out.println(futureId);
-		assertEquals(plantTestNoID.getPlants(), p.getPlants());
+		long autoIncrementedId = pDAO.getNextID() - 1;
+		p = pDAO.getPlantById(autoIncrementedId);
+		assertEquals(plantTest.getPlants(), p.getPlants());
 		
 		
-		//6 Lets Update our first plant so she needs 2 times water a day
+		//5 Lets Update our first plant so she needs 4 times water a week instead of 9
 		plantToCompare.setWaterTimes(4);
-		
+		plantToCompare.setId(autoIncrementedId);
 		pDAO.savePlant(plantToCompare);
-		long idTest = 1l;
-		p = pDAO.getPlantById(idTest);
+		
+		p = pDAO.getPlantById(autoIncrementedId);
 		int TimesReceived = p.getWaterTimes();
 		assertEquals(4, TimesReceived);		
 		
 		//7 Delete Plant
-		idTest = 3l;
-		pDAO.deletePlant(idTest);
+		pDAO.deletePlant(autoIncrementedId);
 		
-		p = pDAO.getPlantById(idTest);
+		p = pDAO.getPlantById(autoIncrementedId);
 		assertEquals(null, p);
-		
 			
+	}
+	
+	public void testService() throws SQLException{
+		//Creating a Test Plant
+		PlantService pSrc = new PlantService();
+		Plant plantTest = new Plant();
+		plantTest.setPlants("TestService");		
+		SimpleDate simDate = new SimpleDate(2018, 11, 17);
+		Date testDate = simDate.getDate();
+		plantTest.setDate(testDate);
+		byte sunTest = 1;
+		plantTest.setSun(sunTest);	
+		plantTest.setWaterTimes(2);
+		plantTest.setWaterUnity("a day");		
+		
+		//Saving plant
+		assertEquals( pSrc.save(plantTest), true);
+		
+		//Get id from saved plant
+		long autoIncrementedId = pSrc.nextId() - 1;
+
+		//Get plant by id
+		Plant p = pSrc.getPlant(autoIncrementedId);
+		assertEquals(p.getPlants(), "TestService");
+		
+		//Getting plant by name
+		List<Plant> pList = pSrc.getPlant("%Service%");
+		assertEquals("TestService", pList.get(0).getPlants());
+		
+		//Getting all plants
+		List<Plant> pList2 = pSrc.getPlants();
+		assertEquals("TestService", pList2.get(1).getPlants());
+		
+		//Updating
+		plantTest.setPlants("NameTest");
+		plantTest.setId(autoIncrementedId);
+		assertEquals(pSrc.save(plantTest), true);
+		p = pSrc.getPlant(autoIncrementedId);
+		assertEquals("NameTest", p.getPlants());
+		
+		//Delete
+		pSrc.delete(autoIncrementedId);
 		
 		
-		
-		
-		//Setting up a Plant
-		/*p.setPlants("Pé de Café");
-		@SuppressWarnings("deprecation")
-		Date date = new Date(1986,31,5);
-		p.setDate(date);
-		byte b = 1;
-		p.setSun(b);
-		p.setWaterTimes(4);
-		p.setWaterUnity("a week");
-		
-		
-		//Add this Plant
-		PlantDAO pd = new PlantDAO();
-		pd.savePlant(p);
-		
-		
-		//We going to get all plants and select the last one using size list
-		List<Plant> plantL = pd.getPlants();	
-		plantL.get(plantL.size()).toString();
-		int inde;
-		inde = plantL.size();
-		Plant littlePlant = plantL.get(inde);
-		System.out.println(littlePlant.toString()+"\n"+inde);*/		
 	}
 	
 }

@@ -27,9 +27,7 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
 
   * Create a Maven Project on Eclipse.
 
-  * Now go into maven repository site and search for MariaDB, it will be the
-  "MariaDB java client" and add the dependency to the pom file.
-  **HERE** if you are using MySQL you must search instead for "MySQL Connector/J".
+  * Now go into maven repository site and search for MariaDB, it will be the "MariaDB java client" and add the dependency to the pom file. if you are using **MySQL** alone, you must search instead for "MySQL Connector/J".
 
   * Following the TDD (Test Driven Development) good practicies, first thing we will be adding into our package, will be a JUnit Test Case, I will call it *_StepByStep*.       **Why:**
     - So we can make methods and test our code as we create it, preventing a lot of Debugging later.
@@ -79,10 +77,10 @@ A simple tutorial, to a simple Java CRUD _(Create, Read, Update and Delete)_.
     - For last, we will delete the plant, and verify if it worked again;
 
 
-  * Our last class will be **GardenService**, since its not a good practice to access directily the DAO layer, we will use this class.  
+  * Our last class will be **PlantService**, since its not a good practice to access directily the DAO layer, we will use this class.  
 
 
-  * Now we will **TEST** a Final method on _StepByStep_: testSaveDeletePlantService
+  * Now we will **TEST** a Final method on _StepByStep_: testService()
     - It will be exactly as the last test method, but now we will be using the methods from the service class.
 
 
